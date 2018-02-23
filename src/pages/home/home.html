@@ -13,13 +13,21 @@
 
         <ion-item>
             <ion-label fixed>Costo</ion-label>
-            <ion-input type="text" value="" [(ngModel)]="costo"></ion-input>
+            <ion-input type="number" value="0" [(ngModel)]="costo"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label fixed>% de propina</ion-label>
-            <ion-input type="text" value="" [(ngModel)]="propina"></ion-input>
+            <ion-input type="number" value="0" [(ngModel)]="propina"></ion-input>
         </ion-item>
 
+        <ion-item>
+            <button ion-button color="light" item-end (click)="CalcularPropina()">Calcular</button>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Propina: ${{totalPropina}}</ion-label>
+            <ion-label>Total: ${{totalGlobal}}</ion-label>
+        </ion-item>
     </ion-list>
 </ion-content>
