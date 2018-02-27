@@ -5,8 +5,11 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { FavoritesPage } from '../pages/favorites/favorites';
+import { FavoritesModalPage } from '../pages/favorites/favorites-modal/favorites-modal';
+import { Config } from '../config';
+import { AngularFireModule } from 'angularfire2';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,20 +19,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
+    FavoritesPage,
+    FavoritesModalPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(Config.firebase),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    FavoritesPage,
+    FavoritesModalPage,
     HomePage,
     TabsPage
   ],

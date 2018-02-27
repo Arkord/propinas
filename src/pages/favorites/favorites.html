@@ -1,0 +1,24 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Favoritos</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h5>Mis restaurants favoritos</h5>
+    <p>
+        Administra tus lugares favoritos
+    </p>
+    <button ion-button full color="primary" (click)="OnNew()">Nuevo lugar</button>
+    <ion-list>
+        <ion-item>
+            <ion-card padding>
+                <div class="card-title">Nombre</div>
+                <div class="card-subtitle">Dirección del restaurant</div>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+</ion-content>
