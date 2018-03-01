@@ -1,3 +1,4 @@
+import { Favorite } from './models/favorite';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
@@ -14,7 +15,6 @@ export class FavoritesService {
 	}
 
 	GetAllFavorites() {
-		let url = 'http://www.operhum.com/ords/runcanrol/api/areasg/';
 		return FAVORITES;
     }
 }

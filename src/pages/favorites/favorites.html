@@ -15,7 +15,7 @@
     <button ion-button full color="primary" (click)="OnNew()">Nuevo lugar</button>
     <ion-list>
         <ion-item>
-            <ion-card padding>
+            <ion-card padding *ngFor="let favorite of favorites">
                 <div class="card-title">Nombre</div>
                 <div class="card-subtitle">Dirección del restaurant</div>
             </ion-card>
