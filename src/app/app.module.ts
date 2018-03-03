@@ -10,6 +10,8 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { FavoritesModalPage } from '../pages/favorites/favorites-modal/favorites-modal';
 import { Config } from '../config';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,6 +33,7 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(Config.firebase),
+    AngularFireDatabaseModule,
     IonicStorageModule.forRoot(),
     HttpModule
   ],
