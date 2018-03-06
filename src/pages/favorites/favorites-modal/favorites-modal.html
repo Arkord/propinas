@@ -15,14 +15,14 @@
     <ion-list>
         <ion-item>
             <ion-label fixed>Nombre</ion-label>
-            <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+            <ion-input type="text" [(ngModel)]="restaurant.nombre"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label fixed>Dirección</ion-label>
-            <ion-input type="text" [(ngModel)]="direccion"></ion-input>
+            <ion-input type="text" [(ngModel)]="restaurant.direccion"></ion-input>
         </ion-item>
         <ion-item>
-            <button ion-button default color="primary">Guardar</button>
+            <button ion-button default color="primary" (click)="OnSave(restaurant)">Guardar</button>
             <button ion-button default color="danger" (click)="OnClose()">Cerrar</button>
         </ion-item>
     </ion-list>

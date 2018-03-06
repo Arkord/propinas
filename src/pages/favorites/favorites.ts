@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import {  FavoritesModalPage } from './favorites-modal/favorites-modal';
 import { FavoritesService } from './favorites.service';
 import { AngularFireList } from 'angularfire2/database';
-import { Observable } from '@firebase/util';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -12,23 +12,31 @@ import { Observable } from '@firebase/util';
   templateUrl: 'favorites.html',
 })
 export class FavoritesPage {
+
   private favoritesService: FavoritesService;
-  private favorites: Observable<any[]>;
+  favoritesList$: Observable<Favorite[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, _favoritesService : FavoritesService) {
     this.favoritesService = _favoritesService;
-    console.log(this.favorites);
+    
+
+    this.favoritesList$ = this.favoritesService
+    .GetAllFavoritesAF()
+    .snapshotChanges()
+    .map(
+      changes => {
+        return changes.map(c => ({
+          key: c.payload.key, ...c.payload.val()
+        }))
+      }
+    )
+  
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavoritesPage');
-    console.log(this.favoritesService.GetAllFavoritesAF());
-    this.favorites = this.favoritesService.GetAllFavoritesAF()
-    .map(changes => {
-      return changes.map(c => ({
-        key: c.payload.key, ...c.payload.val()
-      }))
-    });
+    console.log(this.favoritesList$);
+    
   }
 
   OnNew() {

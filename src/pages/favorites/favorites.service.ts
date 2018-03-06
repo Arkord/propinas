@@ -7,19 +7,18 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Injectable()
 export class FavoritesService {
-	private http: Http;
-	private result: any;
+
+	private restaurantsListRef = this.db.list<Favorite>('restaurants');
 
 	constructor(http: Http, private db: AngularFireDatabase) {
-		this.http = http;
-		this.result = [];
-	}
-
-	GetAllFavorites() {
-		return FAVORITES;
+	
 	}
 	
 	GetAllFavoritesAF() {
-		return this.db.list('restaurants').snapshotChanges();
+		return this.restaurantsListRef;
+	}
+
+	AddFavoriteAF(restaurant: Favorite) {
+		return this.restaurantsListRef.push(restaurant);
 	}
 }

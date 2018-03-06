@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Config {
     static firebase = {
-		apiKey: "AIzaSyB_DcbuQ0u1-ILeskkwwbCkI75Zpj_ZAfA",
-        authDomain: "radiant-inferno-9083.firebaseapp.com",
-        databaseURL: "https://radiant-inferno-9083.firebaseio.com",
-        projectId: "radiant-inferno-9083",
-        storageBucket: "radiant-inferno-9083.appspot.com",
-        messagingSenderId: "114319405769"
+		apiKey: "AIzaSyCfAyg3R42cch-KwXXDrYcYCTvHFExd594",
+        authDomain: "propinas-plus.firebaseapp.com",
+        databaseURL: "https://propinas-plus.firebaseio.com",
+        projectId: "propinas-plus",
+        storageBucket: "propinas-plus.appspot.com",
+        messagingSenderId: "252770008247"
 	};
 }
